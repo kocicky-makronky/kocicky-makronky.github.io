@@ -1,0 +1,40 @@
+<script>  
+function validate_keyword()
+{  
+    var keyword = document.getElementById("keyword_form").value;
+
+    if (keyword == "IK")
+    {
+        return true;
+    }
+    alert("Wrong!");
+    return false;
+}  
+</script>
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">February</h1>
+      <h2 class="project-tagline">14</h2>
+    </section>
+
+    <section class="main-content">
+        <form accept-charset="UTF-8" action="/further.html" onsubmit="return validate_keyword()">
+          <div class="form-group">
+            <label for="keyword" required="required">Keyword</label>
+            <input name="keyword" class="form-control" id="keyword_form" placeholder="Ask him">
+          </div>
+          <button type="submit" class="btn btn-primary">Go</button>
+        </form>
+    </section>
+  </body>
+</html>
