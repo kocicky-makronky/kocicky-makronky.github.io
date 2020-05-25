@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gustav Anděl</title>
+
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+    <!-- Ajax -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!-- My styles -->
+    <link rel="stylesheet" href="/assets/css/pexeso.css">
+</head>
+
+<body>
+<!-- Cats -->
+<div style="text-align: left; font-size: 21px; margin: 20px">
+    <img src="https://lh3.googleusercontent.com/proxy/qRJDmkiOsAxX5o46Piixpp6x2f9E3BsXwhCQIkCqvqaUvQ-uyLi-rA4Xmhu_TXXnUEQl6_f7qc2SxvPosxZ10xh-AP76Gk2S5afVewE9elyth_qr" alt="Tvé kočky" width="500" height="400" style="float: right; margin: 15px">
+    <p style="font-size: 30px; font-weight: bold">Text about her cats bla bla bla</p>
+
+    <p style="text-indent: 20px">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris enim, viverra id nulla sed, malesuada faucibus leo. Etiam eu tempus turpis. Cras vestibulum elit vel consequat rutrum. Donec id sem gravida, malesuada ex et, posuere elit. Vivamus maximus imperdiet faucibus. In lacinia vel mi eu cursus. Praesent a lectus laoreet, rutrum lacus ut, egestas orci. Vestibulum lobortis malesuada ex, vitae consequat neque venenatis et.</p>
+
+    <p style="text-indent: 20px">
+    Pellentesque vel congue eros. Mauris est odio, maximus id magna eu, luctus lobortis elit. Nam condimentum urna libero, non finibus elit congue sit amet. Maecenas mollis libero vel tortor dictum, in accumsan sapien maximus. Nunc sollicitudin cursus bibendum. Donec id porttitor ante, non maximus lacus. Mauris aliquet id dui sed pellentesque. Suspendisse ornare aliquet justo at placerat. Sed et mauris ac metus sodales iaculis scelerisque sed turpis. Quisque faucibus viverra purus sit amet viverra. Nulla libero mauris, viverra id justo feugiat, hendrerit porttitor urna. Pellentesque blandit augue id eros dapibus, et ullamcorper nisl dapibus. Aenean congue quam gravida ex suscipit faucibus. Phasellus commodo pulvinar eros vel accumsan. Sed in placerat justo. Donec congue suscipit odio.</p>
+</div>
+<!-- Macaroni -->
+<div style="text-align: left; font-size: 21px; margin: 20px">
+    <img src="https://sugargeekshow.com/wp-content/uploads/2018/01/french-macaron-recipe.jpg" alt="Tvé macarony" width="500" height="400" style="float: left; margin: 15px">
+    <p style="font-size: 30px; font-weight: bold">Text about her macaroni bla bla bla</p>
+
+    <p style="text-indent: 20px">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris enim, viverra id nulla sed, malesuada faucibus leo. Etiam eu tempus turpis. Cras vestibulum elit vel consequat rutrum. Donec id sem gravida, malesuada ex et, posuere elit. Vivamus maximus imperdiet faucibus. In lacinia vel mi eu cursus. Praesent a lectus laoreet, rutrum lacus ut, egestas orci. Vestibulum lobortis malesuada ex, vitae consequat neque venenatis et.</p>
+
+    <p style="text-indent: 20px">
+    Pellentesque vel congue eros. Mauris est odio, maximus id magna eu, luctus lobortis elit. Nam condimentum urna libero, non finibus elit congue sit amet. Maecenas mollis libero vel tortor dictum, in accumsan sapien maximus. Nunc sollicitudin cursus bibendum. Donec id porttitor ante, non maximus lacus. Mauris aliquet id dui sed pellentesque. Suspendisse ornare aliquet justo at placerat. Sed et mauris ac metus sodales iaculis scelerisque sed turpis. Quisque faucibus viverra purus sit amet viverra. Nulla libero mauris, viverra id justo feugiat, hendrerit porttitor urna. Pellentesque blandit augue id eros dapibus, et ullamcorper nisl dapibus. Aenean congue quam gravida ex suscipit faucibus. Phasellus commodo pulvinar eros vel accumsan. Sed in placerat justo. Donec congue suscipit odio.</p>
+</div>
+
+<h2>Zkuš hrát tuto hru!</h2>
+
+<!-- Board -->
+<div class=" container d-flex flex-column justify-content-center align-items-center" id="boardcontainer">
+<!-- <div id="top">
+    <form> Velikost desky <input type="radio" name="board_size" value="4" checked>4x4 <input type="radio" name="board_size" value="6">6x6</form>
+    <br>
+    <button type="button" id="new_game">Nová hra</button>
+</div> -->
+<!-- The board -->
+<div class="row d-flex justify-content-center align-items-center" id="pexeso_board"></div>
+</div>
+
+<script type="text/javascript" src="/assets/js/pexeso.js"></script>
+
+</body>
+</html>
