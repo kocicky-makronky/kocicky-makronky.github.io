@@ -1,1 +1,4 @@
 cayman/
+.jekyll-metadata
+.sass-cache/
+_site/

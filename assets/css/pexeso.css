@@ -11,7 +11,7 @@ body {
     line-height: 2;
 
     /* Background */
-    background-image: url('media/background1.jpg');
+    background-image: url('/media/background1.jpg');
     /* Nicer opacity */
     background-color: rgba(255,255,255, 0.5);
     background-blend-mode: lighten;
@@ -74,6 +74,16 @@ div#pexeso_board {
 
 #clear {
     clear: both;
+}
+
+.paragraph {
+    text-align: left;
+    margin: 20px;
+}
+
+.paragraph_header {
+    font-size: 30px;
+    font-weight: bold;
 }
 
 @media (min-width:320px) {
