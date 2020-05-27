@@ -3,6 +3,26 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    /* Font */
+    font-family: 'Open Sans'; font-size: 25px;
+
+    /* Line spacing */
+    line-height: 2;
+
+    /* Background */
+    background-image: url('/media/background1.jpg');
+    /* Nicer opacity */
+    background-color: rgba(255,255,255, 0.5);
+    background-blend-mode: lighten;
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #top {
@@ -144,17 +164,4 @@ div#pexeso_board {
         font-size: 300%;
         border-radius: 20px;
     }
-}
-
-button {
-    border-radius: 15px;
-    outline: none;
-    color: white;
-    font-weight: 700;
-    font-family: sans-serif;
-    border: 0;
-    height: 30%;
-    width: 50%;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    background-color: crimson;
 }

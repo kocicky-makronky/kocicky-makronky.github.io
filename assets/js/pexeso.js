@@ -83,7 +83,7 @@ function check(card) {
                 if (cards_flipped === shuffled_cards.length) {
                     $("#pexeso_board").empty();
                     var p = $("<p>");
-                    p.text("Šťastné narozeniny!");
+                    p.html("VŠECHNO NEJLEPŠÍ K<br/>NAROZENINÁM!\u2764");
 
                     p.css({
                         "font-size": "250%",
