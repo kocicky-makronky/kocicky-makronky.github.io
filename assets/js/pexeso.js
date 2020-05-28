@@ -86,9 +86,9 @@ function check(card) {
                     p.html("VŠECHNO NEJLEPŠÍ K<br/>NAROZENINÁM!\u2764");
 
                     p.css({
-                        "font-size": "250%",
+                        "font-size": "3vw",
                         "color": "#f04397",
-                        "margin": "200px auto",
+                        "margin": "20px auto",
                         "text-align": "center",
                         "font-weight": "700"
                     });
