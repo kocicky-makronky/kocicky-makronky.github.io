@@ -5,15 +5,16 @@ body {
     flex-direction: column;
 
     /* Font */
-    font-family: 'Open Sans'; font-size: 25px;
+    font-family: 'Open Sans';
+    font-size: 30px;
 
     /* Line spacing */
     line-height: 2;
 
     /* Background */
     background-image: url('/media/background1.jpg');
-    /*background-color: rgba(255, 255, 255, .5);*/
-    /*background-blend-mode: lighten;*/
+    background-color: rgba(255, 255, 255, .5);
+    background-blend-mode: lighten;
 
     /* Full height */
     height: 100%;
@@ -25,7 +26,7 @@ body {
 }
 
 #boardcontainer {
-    height: 100vh;
+    height: 80vh;
     width: 60vw;
 }
 
@@ -34,7 +35,7 @@ div#pexeso_board {
     border: #999 1px solid;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     padding: 12px;
-    height: 80%;
+    height: 90%;
     width: 70%;
     margin: 20px auto;
 }
@@ -74,6 +75,6 @@ div#pexeso_board {
 }
 
 .paragraph_header {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
 }

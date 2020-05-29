@@ -1,48 +1,46 @@
-/* jshint browser: true */
-/*jshint devel:true */
-/* jshint loopfunc:true */
-/*global $ */
+// Globals
+var GREEN = "#4CAF50";
+var BLUE = "#F04397";
+var SLEEP_TIME = 1000;
 
-var cards = [];
-for (var i = 1; i <= 8; i++) { cards.push(i); cards.push(i); }
+// Card order
 var open_cards = [];
 var open_ids = [];
 var cards_flipped = 0;
-
-function shuffleArray(cards) {
+var cards = [];
+function init_cards() {
+    for (var i = 1; i <= 8; i++) { cards.push(i); cards.push(i); }
     for (var i = cards.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = cards[i];
         cards[i] = cards[j];
         cards[j] = temp;
     }
-    return cards;
 }
+init_cards();
 
+// Board placement and event hooks
 function newboard() {
-    shuffled_cards = shuffleArray(cards);
     document.getElementById('pexeso_board').innerHTML = "";
     cards_flipped = 0;
     var board = '';
 
-    for (var i = 0; i < shuffled_cards.length; i++) {
+    for (var i = 0; i < cards.length; i++) {
         var d = document.createElement("div");
 
         d.setAttribute("class", "tile");
         
         var divcontainer = document.createElement("div");
         
-        var value = shuffled_cards[i];
+        var value = cards[i];
 
         divcontainer.setAttribute("class", "col-3 divcontainer");
         divcontainer.style.float = "left";
         d.id = "card" + i;
 
-        d.value = shuffled_cards[i];
+        d.value = cards[i];
         
-        d.addEventListener("click", function () {
-            check(this);
-        }, false);
+        d.addEventListener("click", function () { check(this); }, false);
         
         divcontainer.appendChild(d);
         
@@ -52,42 +50,55 @@ function newboard() {
     }
 }
 
+// Game logic
 function check(card) {
     var zatvorikarti;
-    if (card.innerHTML === "" && open_cards.length < 2) {
-        card.innerHTML = card.value;
-        $(card).animate({
-            backgroundColor: "white",
-        }, 500);
+    if ($(card).css("background-image") !== "none"
+            || $(card).css("background-color") === "rgb(76, 175, 80)"
+            || open_cards.length === 2) {
+        return;
+    }
 
-        if (open_cards.length === 0) {
-            open_cards.push(card.value);
-            open_ids.push(card.id);
-        } else if (open_cards.length == 1) {
-            open_cards.push(card.value);
-            open_ids.push(card.id);
-            if (open_cards[0] == open_cards[1]) {
+    $(card).css({
+        "background-image": "url(/media/" + card.value + ".jpeg)",
+        "background-size": "100% 100%",
+        "background-position": "center",
+    });
+
+    open_cards.push(card.value);
+    open_ids.push(card.id);
+    if (open_cards.length === 1) { return; }
+
+    setTimeout(
+        function () {
+            var a = document.getElementById(open_ids[0]);
+            var b = document.getElementById(open_ids[1]);
+            if (open_cards[0] !== open_cards[1]) {
+                        $(a).add(b).css("background-image", "none");
+                        a.innerHTML = ""; b.innerHTML = "";
+                        open_cards.length = 0;
+                        open_ids.length = 0;
+            } else {
                 cards_flipped += 2;
-                var a = document.getElementById(open_ids[0]);
-                var b = document.getElementById(open_ids[1]);
-                $(a).add(b).css("border", "#4CAF50 1px solid");
+                $(a).add(b).css("border", GREEN + " 1px solid");
+                $(a).add(b).css("background-image", "none");
+                a.innerHTML = ""; b.innerHTML = "";
 
                 $(a).add(b).animate({
-                    backgroundColor: "#4CAF50",
-                    color: "white"
+                    backgroundColor: GREEN,
                 }, 300);
 
                 open_cards.length = 0;
                 open_ids.length = 0;
 
-                if (cards_flipped === shuffled_cards.length) {
+                if (cards_flipped === cards.length) {
                     $("#pexeso_board").empty();
                     var p = $("<p>");
                     p.html("VŠECHNO NEJLEPŠÍ K<br/>NAROZENINÁM!\u2764");
 
                     p.css({
                         "font-size": "3vw",
-                        "color": "#f04397",
+                        "color": BLUE,
                         "margin": "20px auto",
                         "text-align": "center",
                         "font-weight": "700"
@@ -97,27 +108,10 @@ function check(card) {
                     $("#pexeso_board").append(p);
                     p.slideDown("slow");
                 }
-            } else
-                zatvorikarti = function () {
-                    
-                var a = document.getElementById(open_ids[0]);
-                var b = document.getElementById(open_ids[1]);
-
-                a.innerHTML = "";
-                $(a).animate({
-                    backgroundColor: "#DC143C"
-                }, 500);
-
-                b.innerHTML = "";
-                $(b).animate({
-                    backgroundColor: "#DC143C"
-                }, 500);
-                open_cards.length = 0;
-                open_ids.length = 0;
-            };
-            setTimeout(zatvorikarti, 700);
-        }
-    }
+            }
+        },
+        SLEEP_TIME
+    );
 }
 
 newboard();
