@@ -1,31 +1,60 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <script type="text/javascript" src="/assets/js/countdown.js"></script>
-    <script type="text/javascript" src="/assets/js/valid.js"></script>
+<html lang="cz">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=">
-  </head>
+    <title>Gustav Anděl</title>
 
-  <body>
-    <section class="page-header">
-        <h1 id="countdown" class="project-name"></h1>
-        <h2 id="date" class="project-tagline"></h2>
-        <script>
-            var targetDate = "Feb 14, 2021 00:00";
-            runCountdown(targetDate);
-        </script>
-    </section>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <section class="main-content">
-        <form accept-charset="UTF-8" action="/bday.html" onsubmit="return validate_keyword()">
-          <div class="form-group">
-            <label for="keyword" required="required">Keyword</label>
-            <input name="keyword" class="form-control" id="keyword_form" placeholder="Where are my flowers?">
-          </div>
-        </form>
-    </section>
-  </body>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
+
+    <!-- Ajax -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!-- My styles -->
+    <link rel="stylesheet" href="/assets/css/pexeso.css">
+</head>
+
+<body>
+<!-- Cats -->
+<div class="paragraph">
+    <img src="media/cat.webp" alt="Tvé kočky" width="300vw" height="300vw" style="float: right; margin: 15px">
+    <p class="paragraph_header" style="color: #7a776d">Text about her cats bla bla bla</p>
+
+    <p style="text-indent: 20px">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris enim, viverra id nulla sed, malesuada faucibus leo. Etiam eu tempus turpis. Cras vestibulum elit vel consequat rutrum.</p>
+
+    <p style="text-indent: 20px">
+    Donec id sem gravida, malesuada ex et, posuere elit. Vivamus maximus imperdiet faucibus. In lacinia vel mi eu cursus. Praesent a lectus laoreet, rutrum lacus ut, egestas orci. Vestibulum lobortis malesuada ex, vitae consequat neque venenatis et.</p>
+</div>
+<!-- Macaroni -->
+<div class="paragraph">
+    <img src="media/macaron.webp" alt="Tvé macarony" width="350vw" height="250vw" style="float: left; margin: 15px">
+    <p class="paragraph_header" style="color: #e69667">Text about her macaroni bla bla bla</p>
+
+    <p style="text-indent: 20px">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris enim, viverra id nulla sed, malesuada faucibus leo. Etiam eu tempus turpis. Cras vestibulum elit vel consequat rutrum.</p>
+
+    <p style="text-indent: 20px">
+    Donec id sem gravida, malesuada ex et, posuere elit. Vivamus maximus imperdiet faucibus. In lacinia vel mi eu cursus. Praesent a lectus laoreet, rutrum lacus ut, egestas orci. Vestibulum lobortis malesuada ex, vitae consequat neque venenatis et.</p>
+</div>
+
+<h2 style="color: #7932A8; font-size: 30px"><b>A teď něco pro mozek (a vzpomínky)</b></h2>
+
+<!-- Board -->
+<div class="container d-flex flex-column justify-content-center align-items-center" id="boardcontainer">
+<!-- The board -->
+<div class="row d-flex justify-content-center align-items-center" id="pexeso_board"></div>
+</div>
+
+<script type="text/javascript" src="/assets/js/pexeso.js"></script>
+</body>
 </html>

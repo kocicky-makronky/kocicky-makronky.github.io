@@ -1,7 +1,9 @@
 // Globals
 var GREEN = "#4CAF50";
-var BLUE = "#F04397";
-var SLEEP_TIME = 1000;
+var PINK = "#C942DB";
+var PURPLE = "#7932A8";
+var SLEEP_TIME_LONG = 1000;
+var SLEEP_TIME_SHORT = 500;
 
 // Card order
 var open_cards = [];
@@ -29,9 +31,9 @@ function newboard() {
         var d = document.createElement("div");
 
         d.setAttribute("class", "tile");
-        
+
         var divcontainer = document.createElement("div");
-        
+
         var value = cards[i];
 
         divcontainer.setAttribute("class", "col-3 divcontainer");
@@ -39,13 +41,13 @@ function newboard() {
         d.id = "card" + i;
 
         d.value = cards[i];
-        
+
         d.addEventListener("click", function () { check(this); }, false);
-        
+
         divcontainer.appendChild(d);
-        
+
         document.getElementById('pexeso_board').appendChild(divcontainer);
-        
+
         $(divcontainer).hide().slideDown("slow");
     }
 }
@@ -53,9 +55,7 @@ function newboard() {
 // Game logic
 function check(card) {
     var zatvorikarti;
-    if ($(card).css("background-image") !== "none"
-            || $(card).css("background-color") === "rgb(76, 175, 80)"
-            || open_cards.length === 2) {
+    if ($(card).css("background-image") !== "none" || open_cards.length === 2) {
         return;
     }
 
@@ -69,24 +69,23 @@ function check(card) {
     open_ids.push(card.id);
     if (open_cards.length === 1) { return; }
 
-    setTimeout(
-        function () {
-            var a = document.getElementById(open_ids[0]);
-            var b = document.getElementById(open_ids[1]);
-            if (open_cards[0] !== open_cards[1]) {
-                        $(a).add(b).css("background-image", "none");
-                        a.innerHTML = ""; b.innerHTML = "";
-                        open_cards.length = 0;
-                        open_ids.length = 0;
-            } else {
-                cards_flipped += 2;
-                $(a).add(b).css("border", GREEN + " 1px solid");
+    var a = document.getElementById(open_ids[0]);
+    var b = document.getElementById(open_ids[1]);
+    if (open_cards[0] !== open_cards[1]) {
+        setTimeout(
+            function () {
                 $(a).add(b).css("background-image", "none");
                 a.innerHTML = ""; b.innerHTML = "";
-
-                $(a).add(b).animate({
-                    backgroundColor: GREEN,
-                }, 300);
+                open_cards.length = 0;
+                open_ids.length = 0;
+            },
+            SLEEP_TIME_LONG
+        );
+    } else {
+        setTimeout(
+            function () {
+                cards_flipped += 2;
+                $(a).add(b).css("border", GREEN + " 2px solid");
 
                 open_cards.length = 0;
                 open_ids.length = 0;
@@ -97,21 +96,21 @@ function check(card) {
                     p.html("VŠECHNO NEJLEPŠÍ K<br/>NAROZENINÁM!\u2764");
 
                     p.css({
-                        "font-size": "3vw",
-                        "color": BLUE,
+                        "font-size": "2vw",
+                        "color": PINK,
                         "margin": "20px auto",
                         "text-align": "center",
                         "font-weight": "700"
                     });
-                    
+
                     p.hide();
                     $("#pexeso_board").append(p);
                     p.slideDown("slow");
                 }
-            }
-        },
-        SLEEP_TIME
-    );
+            },
+            SLEEP_TIME_SHORT
+        );
+    }
 }
 
 newboard();
