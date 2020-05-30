@@ -12,7 +12,7 @@ body {
     line-height: 2;
 
     /* Background */
-    background-image: url('/media/background2.jpg');
+    background-image: url("../../media/background2.jpg");
     background-color: rgba(255, 255, 255, .35);
     background-blend-mode: lighten;
 
@@ -26,8 +26,8 @@ body {
 }
 
 #boardcontainer {
-    height: 70vh;
-    width: 50vw;
+    height: 90vh;
+    width: 60vw;
 }
 
 div#pexeso_board {
@@ -67,6 +67,13 @@ div#pexeso_board {
 
 #clear {
     clear: both;
+}
+
+.intro {
+    margin-left: -25%;
+    width: 60%;
+    font-size: 35px;
+    font-style: italic;
 }
 
 .paragraph {

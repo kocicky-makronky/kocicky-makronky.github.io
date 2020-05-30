@@ -60,7 +60,7 @@ function check(card) {
     }
 
     $(card).css({
-        "background-image": "url(/media/" + card.value + ".jpeg)",
+        "background-image": "url(media/" + card.value + ".jpeg)",
         "background-size": "100% 100%",
         "background-position": "center",
     });
@@ -96,7 +96,7 @@ function check(card) {
                     p.html("VŠECHNO NEJLEPŠÍ K<br/>NAROZENINÁM!\u2764");
 
                     p.css({
-                        "font-size": "2vw",
+                        "font-size": "3vw",
                         "color": PINK,
                         "margin": "20px auto",
                         "text-align": "center",
