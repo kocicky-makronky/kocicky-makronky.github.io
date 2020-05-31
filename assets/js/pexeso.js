@@ -40,6 +40,17 @@ function newboard() {
         divcontainer.style.float = "left";
         d.id = "card" + i;
 
+        // Load image to cache
+        $(d).css({
+            "background-image": "url(media/" + cards[i] + ".jpeg)",
+            "background-size": "100% 100%",
+            "background-position": "center",
+        });
+        // Reset image
+        $(d).css({
+            "background-image": "none",
+        });
+
         d.value = cards[i];
 
         d.addEventListener("click", function () { check(this); }, false);
@@ -61,8 +72,6 @@ function check(card) {
 
     $(card).css({
         "background-image": "url(media/" + card.value + ".jpeg)",
-        "background-size": "100% 100%",
-        "background-position": "center",
     });
 
     open_cards.push(card.value);
