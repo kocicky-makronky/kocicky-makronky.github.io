@@ -7,6 +7,7 @@ body {
     /* Font */
     font-family: 'Open Sans';
     font-size: 20px;
+    color: #2d0928;
 
     /* Line spacing */
     line-height: 2;
@@ -67,13 +68,6 @@ div#pexeso_board {
 
 #clear {
     clear: both;
-}
-
-.intro {
-    margin-left: -25%;
-    width: 60%;
-    font-size: 35px;
-    font-style: italic;
 }
 
 .paragraph {
